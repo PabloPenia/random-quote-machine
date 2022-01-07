@@ -24,7 +24,7 @@ const App = () => {
           Get the{' '}
           <Link
             ext={true}
-            url="https://pablopenia.github.io/random-quote-machine"
+            url="https://github.com/PabloPenia/random-quote-machine"
           >
             Source Code
           </Link>
