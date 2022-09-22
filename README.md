@@ -1,7 +1,7 @@
 # Random Quote Machine
 
 This is a simple quotes generator, made with React and Typescript.
-
+[DEMO]("https://pablopenia.github.io/random-quote-machine")
 **Requires** Node 14+
 **Clone this repo**: `git clone https://github.com/PabloPenia/random-quote-machine.git`
 **Install dependencies**: `yarn install`
