@@ -2,7 +2,7 @@
 	"homepage": "https://pablopenia.github.io/random-quote-machine",
 	"name": "random-quote-machine",
 	"version": "1.0.0",
-	"private": true,
+	"type": "module",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
