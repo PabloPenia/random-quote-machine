@@ -22,18 +22,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      # - name: Install Dependencies
+      #   run: yarn install
+
+      # - name: Build App
+      #   run: yarn build
+
       - name: Install Dependencies
-        run: yarn install
-
+        uses: borales/actions-yarn@v3.0.0
+          with:
+            cmd: install # will run `yarn install` command
+      
       - name: Build App
-        run: yarn build
-
-      # - uses: borales/actions-yarn@v3.0.0
-      #   with:
-      #     cmd: install # will run `yarn install` command
-      # - uses: borales/actions-yarn@v3.0.0
-      #   with:
-      #     cmd: build # will run `yarn build` command
+        uses: borales/actions-yarn@v3.0.0
+          with:
+            cmd: build # will run `yarn build` command
       # - name: deploy
       #   uses: JamesIves/github-pages-deploy-action@4.2.0
       #   with:
@@ -41,7 +44,7 @@ jobs:
       #     folder: dist # The folder the action should deploy.
       - name: Deploy App
         run: |
-          git config user.name "PabloPenia" && git config user.email "pablopenia.dev@gmail.com"
+          git config --global user.name ${{ secrets.USER_NAME }}
+          git config --global user.email ${{ secrets.USER_EMAIL }}
+          git remote set-url origin https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ secrets.USER_NAME }}/random-quote-machine
           yarn deploy
-
-        # git remote set-url origin https://${{secrets.ACCESS_TOKEN}}@github.com/${{secrets.USER_NAME}}/random-quote-machine
