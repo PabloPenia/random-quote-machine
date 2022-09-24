@@ -10,6 +10,7 @@ type ControlsProps = {
 
 const Controls: FC<ControlsProps> = ({ randomize, quote }) => {
 	const [isOpen, setisOpen] = useState<boolean>(false)
+	const url = window.location.href
 	return (
 		<section className='controls'>
 			<Button id='new-quote' handleClick={randomize}>
@@ -22,26 +23,23 @@ const Controls: FC<ControlsProps> = ({ randomize, quote }) => {
 			</Button>
 			<ul className={isOpen ? 'active' : undefined}>
 				<li>
-					<Link ext={true} url='#'>
+					<Link
+						ext={true}
+						url={`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${quote}`}
+					>
 						<Icon symbolId='facebook-icon' size='small' />
-					</Link>
-				</li>
-
-				<li>
-					<Link ext={true} url='#'>
-						<Icon symbolId='instagram-icon' size='small' />
 					</Link>
 				</li>
 				<li>
 					<Link
 						ext={true}
-						url={`https://twitter.com/intent/tweet?text=${quote}&url=https://google.com`}
+						url={`https://twitter.com/intent/tweet?text=${quote}&url=${url}`}
 					>
 						<Icon symbolId='twitter-icon' size='small' />
 					</Link>
 				</li>
 				<li>
-					<Link ext={true} url='#'>
+					<Link ext={true} url={`https://wa.me/?text=${quote} - ${url}`}>
 						<Icon symbolId='whatsapp-icon' size='small' />
 					</Link>
 				</li>

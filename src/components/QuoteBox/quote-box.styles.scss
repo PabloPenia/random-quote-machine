@@ -18,7 +18,7 @@
     top: 100%;
     margin-top: 0.1em;
     font: {
-      size: 0.8em;
+      size: 0.7em;
       style: italic;
     }
     text-align: center;
@@ -58,13 +58,11 @@
 }
 figure {
   position: relative;
-  // font-family: 'Barlow Condensed', sans-serif;
   margin: 0 auto;
   align-self: center;
-  cursor: pointer;
+  cursor: pointer;  
 }
 blockquote {
-  // font-family: 'Abril Fatface', cursive;
   position: relative;
   /* for pseudos */
   color: var(--color__txt);
@@ -96,6 +94,7 @@ blockquote {
     border-bottom: none;
     border-left: none;
     z-index: 3;
+
     
   }
   &:before {
@@ -106,6 +105,7 @@ blockquote {
     bottom: -3px;
     left: 50px;
     z-index: 2;
+    transition: 1s border-color;
   }
 }
 figcaption {

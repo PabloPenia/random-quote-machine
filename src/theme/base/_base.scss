@@ -26,6 +26,7 @@ a {
   align-items: flex-end;
   background: var(--color__bg);
   color: var(--color__txt);
+  transition: 1s background;
 }
 footer {
   @extend %flex;
