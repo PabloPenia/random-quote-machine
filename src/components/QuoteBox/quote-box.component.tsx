@@ -10,15 +10,11 @@ type QuoteBoxProps = {
 }
 
 const QuoteBox: FC<QuoteBoxProps> = ({ data, randomize }) => {
+	const str = `${data.quote} - ${data.author}${data.book && ', ' + data.book}`
 	return (
 		<article className='quotebox'>
 			<Quote content={data} randomize={randomize} />
-			<Controls
-				randomize={randomize}
-				share={function (): void {
-					throw new Error('Function not implemented.')
-				}}
-			/>
+			<Controls randomize={randomize} quote={str} />
 		</article>
 	)
 }

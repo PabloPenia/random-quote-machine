@@ -4,20 +4,55 @@
   display: flex;
   flex-direction: column;
   gap: 2em;
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    gap: 0.1em;
-    > div {
-      display: flex;
-      gap: 0.5em
+}
+.controls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 0.5em;
+  > span {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    margin-top: 0.1em;
+    font: {
+      size: 0.8em;
+      style: italic;
     }
-    > span {
-      display: block;
-      font-size: 0.7em;
-      font-style: italic;
+    text-align: center;
+  }
+  > ul {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    padding: 1em;
+    bottom: 100%;
+    margin-bottom: 0.8em;
+    right: 0;    
+    gap: 0.4em;
+    background: var(--color__fg);
+    border: 1px solid currentColor;
+    border-radius: 1rem;
+    &:after {
+      content: '';
+      height: 2rem;
+      width: 2rem;
+      background: var(--color__fg);
+      transform: rotate(45deg);
+      border: 0 solid currentColor;
+      border-width: 0 1px 1px 0;
+      border-radius: 0 0 4px 0;
+      position: absolute;
+      top: 86%;
+      right: 20%;
+    }
+    &.active {
+      display: flex;
+    }
+    a {
+      border: 0;
     }
   }
 }
