@@ -1,5 +1,4 @@
 import { FC, ReactNode } from 'react'
-// some
 type ButtonProps = {
 	handleClick: () => void
 	id: string
