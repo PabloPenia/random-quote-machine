@@ -49,12 +49,15 @@
 #           git remote set-url origin https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ secrets.USER_NAME }}/random-quote-machine
 #           yarn deploy
 name: Build and Deploy
-on: [push]
+on:
+  push:
+    branches:
+      - 'master'
 permissions:
   contents: write
 jobs:
   build-and-deploy:
-    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    # concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -63,7 +66,7 @@ jobs:
       - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
         run: |
           yarn install
-          yarn run build
+          yarn build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
