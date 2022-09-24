@@ -41,7 +41,7 @@ jobs:
       #     folder: dist # The folder the action should deploy.
       - name: Deploy App
         run: |
-          git config --global user.name PabloPenia && git config --global user.email pablopenia.dev@gmail.com
+          git config user.name "PabloPenia" && git config user.email "pablopenia.dev@gmail.com"
           yarn deploy
 
         # git remote set-url origin https://${{secrets.ACCESS_TOKEN}}@github.com/${{secrets.USER_NAME}}/random-quote-machine
