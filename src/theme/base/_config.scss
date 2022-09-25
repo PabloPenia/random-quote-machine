@@ -1,6 +1,9 @@
+@use '../abstracts/mixins' as *;
 :root {
   --font__base: 'Roboto Slab', serif;
   --font__headings: 'Ruda', sans-serif;
+  --font__base--normal: 1.8rem;
+  --font__base--small: 0.7em;
   --sp-sides: 4%;
   --b-radius: 0.4rem;
   --color__hue: 100;
@@ -20,5 +23,9 @@
     var(--color__hue), 
     var(--color__sat), 
     10%
-  ); 
+  );
+  @include breakpoint(768px){
+    --font__base--normal: 2.4rem;
+  }
+
 }

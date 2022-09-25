@@ -1,3 +1,4 @@
+import './button.styles.scss'
 import { FC, ReactNode } from 'react'
 type ButtonProps = {
 	handleClick: () => void

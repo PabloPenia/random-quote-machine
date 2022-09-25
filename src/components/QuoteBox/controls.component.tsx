@@ -44,7 +44,7 @@ const Controls: FC<ControlsProps> = ({ randomize, quote }) => {
 					</Link>
 				</li>
 			</ul>
-			<span>Tip: tap the bullet to get new quote.</span>
+			<span className='tip'>Tip: tap the bullet to get new quote.</span>
 		</section>
 	)
 }

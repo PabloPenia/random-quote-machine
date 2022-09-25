@@ -1,0 +1,22 @@
+@use '../../theme/abstracts/mixins' as *;
+button {
+  padding: 0.4em 0.8em;
+  border: 1px solid currentColor;
+  border-radius: var(--b-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2em;
+  font: {
+    weight: bold;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    background: var(--color__txt);
+    color: var(--color__bg);
+  }
+  .icon svg {
+    fill: currentColor;
+  }
+}

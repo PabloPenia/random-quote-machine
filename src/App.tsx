@@ -7,11 +7,8 @@ import ErrorMsg from './components/ErrorMsg/error-msg.component'
 import Loader from './components/Loader/loader.component'
 import { useEffect, useState } from 'react'
 import { randomize } from './utils/functions'
-// TODO: Change App layout here and in sass files:
-//* Hue changes needs to move to first #app child
-//* first #app child should have all current #app styles, specially sizing and bg.
-//* then refactor possible issues on shared components.
-//* then create new app state to handle loading
+
+// TODO: create new app state to handle loading
 //* then render first #app child only when is not loading, otherwise render loader/spinner
 // TODO: Loader needs styling
 const url =
@@ -53,16 +50,14 @@ const App = () => {
 	}, [currentHue, api.data])
 
 	return (
-		<>
-			<main>
-				{api.error && <ErrorMsg err={api.error} />}
-				{api.isLoading && <Loader />}
-				{api.data && currentQuote >= 0 && (
-					<QuoteBox data={api.data[currentQuote]} randomize={reRandomize} />
-				)}
-			</main>
+		<main>
+			{api.error && <ErrorMsg err={api.error} />}
+			{api.isLoading && <Loader />}
+			{api.data && currentQuote >= 0 && (
+				<QuoteBox data={api.data[currentQuote]} randomize={reRandomize} />
+			)}
 			<Footer />
-		</>
+		</main>
 	)
 }
 
