@@ -1,4 +1,4 @@
-@use '../abstracts/mixins' as *;
+@use '../abstracts/mixin';
 @use '../abstracts/extends';
 html {
   height: 100%;
@@ -13,13 +13,38 @@ a {
   color: var(--color__txt);
   border-bottom: 1px solid var(--color__txt);
   text-decoration: none;
-  @include hover {
+  @include mixin.hover {
     transform: scale(1.1)
+  }
+}
+button {
+  padding: 0.4em 0.8em;
+  border: 1px solid currentColor;
+  border-radius: var(--b-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2em;
+
+  font: {
+    weight: bold;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: var(--color__txt);
+    color: var(--color__bg);
+  }
+
+  .icon svg {
+    fill: currentColor;
   }
 }
 /*******************************************
 *              LAYOUT
 *******************************************/
+// TODO refactor this
 main {
   @extend %flex;
   // flex-direction: column;

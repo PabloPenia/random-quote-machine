@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import Button from '../Button/button.component'
+import { Button } from '../common/button.component'
 import Icon from '../Icon/icon.component'
 import Link from '../Link/link.component'
 
@@ -13,11 +13,11 @@ const Controls: FC<ControlsProps> = ({ randomize, quote }) => {
 	const url = window.location.href
 	return (
 		<section className='controls'>
-			<Button id='new-quote' handleClick={randomize}>
+			<Button handleClick={randomize}>
 				<Icon symbolId='reload-icon' size='small' />
 				<span>New Quote</span>
 			</Button>
-			<Button id='whatever' handleClick={() => setisOpen((prev) => !prev)}>
+			<Button handleClick={() => setisOpen((prev) => !prev)}>
 				<Icon symbolId='share-icon' size='small' />
 				<span>Share</span>
 			</Button>

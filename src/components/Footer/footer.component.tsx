@@ -4,7 +4,7 @@ import Link from '../Link/link.component'
 
 const Footer = () => {
 	return (
-		<footer>
+		<footer className='flex'>
 			<h2>Random Quote Machine</h2>
 			<span>developed by</span>
 			<Link ext={true} url='https://linkedin.com/in/PabloPenia'>

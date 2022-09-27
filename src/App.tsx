@@ -4,7 +4,7 @@ import Footer from './components/Footer/footer.component'
 import { ApiResponse } from './types'
 import useFetchData from './hooks/useFetchData'
 import ErrorMsg from './components/ErrorMsg/error-msg.component'
-import Loader from './components/Loader/loader.component'
+import { Loader } from './components/Spinner/spinner.component'
 import { useEffect, useState } from 'react'
 import { randomize } from './utils/functions'
 
@@ -52,7 +52,11 @@ const App = () => {
 	return (
 		<main>
 			{api.error && <ErrorMsg err={api.error} />}
-			{api.isLoading && <Loader />}
+			{api.isLoading && (
+				<Loader label={'loader'} state={false}>
+					<p>hfhgffuguygu</p>
+				</Loader>
+			)}
 			{api.data && currentQuote >= 0 && (
 				<QuoteBox data={api.data[currentQuote]} randomize={reRandomize} />
 			)}
