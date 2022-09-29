@@ -1,3 +1,12 @@
+///  ? Button and Link styles has been moved to theme/base/_base.scss
+/// ? Icon styles to theme/base/_icons.scss
+.error {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4em 2em;
+  border: 6px solid var(--color__txt);
+}
 .spinner {
   height: 60vh;
   width: 100%;

@@ -55,4 +55,17 @@ main {
   background: var(--color__bg);
   color: var(--color__txt);
   transition: 1s background;
+  footer {
+    @extend %flex;
+    width: 100%;
+    padding: 1em;
+    justify-content: center;
+    align-items: center;
+    color: hsl(var(--color__hue), var(--color__sat), 5%);
+  
+    font: {
+      size: var(--font__base--small);
+      weight: bold;
+    }
+  }
 }
