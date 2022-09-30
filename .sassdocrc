@@ -1,0 +1,4 @@
+{
+	"dest": "./docs/sassdoc/",
+	"package": "./package.json"
+}

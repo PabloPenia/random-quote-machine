@@ -1,7 +1,7 @@
 {
 	"name": "random-quote-machine",
 	"description": "",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"license": "MIT",
 	"author": {
 		"name": "Pablo Peña",
@@ -11,22 +11,21 @@
 		"type": "git",
 		"url": "https://github.com/pablopenia/random-quote-machine.git"
 	},
-	"homepage": "https://pablopenia.github.io/random-quote-machine",
+	"homepage": "https://pp-random-quote-machine.netlify.app",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"lint": "npx eslint src",
-		"lint:fix": "npm run lint -- --fix",
+		"lint:fix": "yarn lint -- --fix",
 		"prettier": "npx prettier src --check",
-		"prettier:fix": "npm run prettier -- --write",
-		"format": "npm run prettier:fix && npm run lint:fix"
+		"prettier:fix": "yarn prettier -- --write",
+		"format": "yarn prettier:fix && yarn lint:fix"
 	},
 	"dependencies": {
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-icons": "^4.3.1"
+		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.20",

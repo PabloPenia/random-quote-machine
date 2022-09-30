@@ -34,10 +34,23 @@
   },
   "include": [
     "vite.config.ts",
-    "**/*.ts",
-    "**/*.tsx"
+    "defs.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "typedocOptions": {
+    "entryPoints": ["src"],
+    "out": "docs",
+    "excludeInternal": true,
+    "excludeExternals": true,
+    "excludeNotDocumented": true,
+    "plugin": [
+      "typedoc-plugin-merge-modules",
+		  "typedoc-plugin-mermaid",
+		  "typedoc-plugin-missing-exports",
+    ],
+  }
 }

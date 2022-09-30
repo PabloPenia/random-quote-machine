@@ -1,12 +1,10 @@
 import './theme/App.scss'
 import QuoteBox from './components/QuoteBox/quote-box.component'
-import Footer from './components/Footer/footer.component'
 import { ApiResponse } from './types'
 import useFetchData from './hooks/useFetchData'
-import ErrorMsg from './components/ErrorMsg/error-msg.component'
-import Loader from './components/Loader/loader.component'
 import { useEffect, useState } from 'react'
 import { randomize } from './utils/functions'
+import { ErrorMsg, Icon, Link, Spinner } from './components/common'
 
 // TODO: create new app state to handle loading
 //* then render first #app child only when is not loading, otherwise render loader/spinner
@@ -16,8 +14,10 @@ const url =
 const defaultHue = randomize(0, 360, -1).toString()
 const App = () => {
 	const [currentHue, setCurrentHue] = useState<string>(defaultHue)
-	const [currentQuote, setCurrentQuote] = useState<number>(-1) // currentQuote = index on data array
-	const [reqNewQuote, setReqNewQuote] = useState<boolean>(true) // avoids re-randomize quote when hue needs multiple changes to match the requeriments
+	// currentQuote = index on data array
+	const [currentQuote, setCurrentQuote] = useState<number>(-1)
+	// avoids re-randomize quote when hue needs multiple changes to match the requeriments
+	const [reqNewQuote, setReqNewQuote] = useState<boolean>(true)
 	// TODO: refactor next 2 functions to reusable functions on utils/functions
 	const setHueProp = (val: string) =>
 		document.documentElement.style.setProperty('--color__hue', val)
@@ -50,14 +50,36 @@ const App = () => {
 	}, [currentHue, api.data])
 
 	return (
-		<main>
-			{api.error && <ErrorMsg err={api.error} />}
-			{api.isLoading && <Loader />}
-			{api.data && currentQuote >= 0 && (
-				<QuoteBox data={api.data[currentQuote]} randomize={reRandomize} />
-			)}
-			<Footer />
-		</main>
+		<>
+			<main>
+				<Link
+					//	TODO add and style this class
+					className='github'
+					url='https://github.com/PabloPenia/random-quote-machine'
+					ext
+				>
+					<Icon id='github-icon' />
+				</Link>
+				{api.error && <ErrorMsg error={api.error} />}
+				{api.isLoading && (
+					//	TODO: Add <Wrapper /> instead of spinner only
+					<div>
+						<p>Wait, loading data...</p>
+						<Spinner />
+					</div>
+				)}
+				{api.data && currentQuote >= 0 && (
+					<QuoteBox data={api.data[currentQuote]} randomize={reRandomize} />
+				)}
+				<footer>
+					<h2>Random Quote Machine</h2>
+					<span>developed by</span>
+					<Link url='https://linkedin.com/in/PabloPenia' ext>
+						Pablo Peña
+					</Link>
+				</footer>
+			</main>
+		</>
 	)
 }
 

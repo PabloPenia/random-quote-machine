@@ -6,7 +6,7 @@ This is a simple quotes generator, made with React and Typescript.
 
 - More than 50 quotes from several books and authors.
 - Getting new quote also randomize color scheme.
-- Getting new quote never repeat the same quote or color scheme consequentily.
+- Color scheme and quote cannot be repeated consecutively
 - When color scheme changes new colors will be at least 50deg of separation from previous scheme.
 - Ability to share quote and url to facebook twitter and whatsapp.
 - Ability to get new quote by tapping/clicking the current quote and/or button.
@@ -22,7 +22,7 @@ This is a simple quotes generator, made with React and Typescript.
 
 **Build**: `yarn build`.
 
-**Run**: `yarn dev` (development) or `yarn start` (production).
+**Run**: `yarn dev` (development).
 _More scripts can be found on package.json for linting/formatting_
 
 # Changelog
