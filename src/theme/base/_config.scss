@@ -3,8 +3,8 @@
 :root {
   --font__base: 'Roboto Slab', serif;
   --font__headings: 'Ruda', sans-serif;
-  --font__base--normal: 1.8rem;
-  --font__base--small: 0.7em;
+  --font__base: 2rem;
+  --font__base--small: 1.5rem;
   --sp-sides: 4%;
   --b-radius: 0.4rem;
   --color__hue: 100;
@@ -26,6 +26,6 @@
     10%
   );
   @include mixin.mediaQuery($from: 'tablet') {
-    --font__base--normal: 2.4rem;
+    --font__base: 2.4rem;
   }
 }

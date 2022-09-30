@@ -1,4 +1,5 @@
 .quotebox {
+  padding-top: 8rem;
   width: 90%;
   max-width: 60rem;
   display: flex;
@@ -22,12 +23,7 @@
     border-radius: 20px;
     padding: 25px;
     h1 {
-      font-size: 2.8rem;
       user-select: none;
-    }
-    @media all and (min-width: 600px) {
-      font-size: 3rem;
-      line-height: 1.2;
     }
     &:after {
       content: "";
@@ -56,8 +52,7 @@
   figcaption {
     position: relative;
     color: var(--color__txt);
-    font-size: 1.3rem;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.2;
     margin: 0;
     padding-top: 15px;
@@ -78,6 +73,7 @@
   display: flex;
   align-items: center;
   margin-left: auto;
+  margin-top: 2em;
   gap: var(--font__base--small);
   .tip {
     display: block;

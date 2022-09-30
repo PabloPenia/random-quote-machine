@@ -52,6 +52,14 @@ const App = () => {
 	return (
 		<>
 			<main>
+				<Link
+					//	TODO add and style this class
+					className='github'
+					url='https://github.com/PabloPenia/random-quote-machine'
+					ext
+				>
+					<Icon id='github-icon' />
+				</Link>
 				{api.error && <ErrorMsg error={api.error} />}
 				{api.isLoading && (
 					//	TODO: Add <Wrapper /> instead of spinner only
@@ -68,14 +76,6 @@ const App = () => {
 					<span>developed by</span>
 					<Link url='https://linkedin.com/in/PabloPenia' ext>
 						Pablo Peña
-					</Link>
-					<Link
-						//	TODO add and style this class
-						className='github'
-						url='https://github.com/PabloPenia/random-quote-machine'
-						ext
-					>
-						<Icon id='github-icon' size='smaller' />
 					</Link>
 				</footer>
 			</main>

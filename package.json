@@ -11,7 +11,7 @@
 		"type": "git",
 		"url": "https://github.com/pablopenia/random-quote-machine.git"
 	},
-	"homepage": "https://pablopenia.github.io/random-quote-machine",
+	"homepage": "https://pp-random-quote-machine.netlify.app",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -21,14 +21,11 @@
 		"lint:fix": "yarn lint -- --fix",
 		"prettier": "npx prettier src --check",
 		"prettier:fix": "yarn prettier -- --write",
-		"format": "yarn prettier:fix && yarn lint:fix",
-		"gen-sassdocs": "sassdoc ./src/theme",
-		"docs": "typedoc --entryPointStrategy expand --tsconfig ./tsconfig.json"
+		"format": "yarn prettier:fix && yarn lint:fix"
 	},
 	"dependencies": {
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-icons": "^4.3.1"
+		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.20",
@@ -45,15 +42,8 @@
 		"eslint-plugin-promise": "^6.0.1",
 		"eslint-plugin-react": "^7.31.8",
 		"eslint-plugin-react-hooks": "^4.6.0",
-		"eslint-plugin-tsdoc": "^0.2.17",
 		"prettier": "^2.7.1",
 		"sass": "^1.55.0",
-		"sassdoc": "^2.7.4",
-		"typedoc": "^0.23.15",
-		"typedoc-plugin-markdown": "^3.13.6",
-		"typedoc-plugin-merge-modules": "^4.0.1",
-		"typedoc-plugin-mermaid": "^1.9.0",
-		"typedoc-plugin-missing-exports": "^1.0.0",
 		"typescript": "^4.8.3",
 		"vite": "^3.1.3",
 		"vite-tsconfig-paths": "^3.5.0"

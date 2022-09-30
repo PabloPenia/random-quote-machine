@@ -6,7 +6,7 @@ html {
 body {
   font: {
     family: var(--font__base);
-    size: var(--font__base--normal);
+    size: var(--font__base);
   }
 }
 a {
@@ -66,6 +66,56 @@ main {
     font: {
       size: var(--font__base--small);
       weight: bold;
+    }
+  }
+}
+
+.github {
+  position: absolute;
+  top: 0;
+  right: 0;
+  span {
+    width: 8rem;
+    padding-top: 8rem;
+  }
+}
+.github {
+  position: absolute;
+  top: 0;
+  border: 0;
+  right: 0;
+  text-decoration: none;
+  .github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+  }
+  .octo-arm {
+    transform-origin: 130px 106px;
+  }
+  @keyframes octocat-wave {
+  
+    0%,
+    100% {
+      transform: rotate(0)
+    }
+  
+    20%,
+    60% {
+      transform: rotate(-25deg)
+    }
+  
+    40%,
+    80% {
+      transform: rotate(10deg)
+    }
+  }
+  
+  @media (max-width:500px) {
+    .github-corner:hover .octo-arm {
+      animation: none
+    }
+  
+    .github-corner .octo-arm {
+      animation: octocat-wave 560ms ease-in-out
     }
   }
 }
